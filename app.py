@@ -31,7 +31,7 @@ def main():
     Main function to run the Streamlit app.
     """
     st.set_page_config(layout="wide")
-    st.title('Chandra Source Catalogue: Interactive Viewer 🔭')
+    st.title('Classifying Chandra Sources: Interactive Viewer 🔭')
     
     # Load data from the CSV file
     try:
@@ -105,8 +105,8 @@ def main():
             
     # --- Right Panel (Placeholder) ---
     with col3:
-        st.header("Additional Info")
-        st.write("This panel is reserved for future updates.")
+        st.header("SHAP Analysis")
+        st.write("Local Explanation of Classification")
 
 if __name__ == "__main__":
     main()
