@@ -35,7 +35,7 @@ def main():
     
     # Load data from the CSV file
     try:
-        df = pd.read_csv('df2.csv')
+        df = pd.read_csv('df2.csv', usecols = ['CSC-ID', 'significance', 'var_flag', 'streak_src_flag', 'pileup_flag', 'ra', 'dec', 'missing', 'sat_src_flag', 'extent_flag', 'conf_flag', 'class', 'prob', 'prob_margin', 'prob_AGN', 'prob_CV', 'prob_HMXB', 'prob_LMXB', 'prob_PULSAR', 'prob_STAR', 'prob_ULX', 'prob_YSO'])
     except FileNotFoundError:
         st.error("Error: 'df2.csv' not found. Please make sure the data file is in the same directory.")
         return
