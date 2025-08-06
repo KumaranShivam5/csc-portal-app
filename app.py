@@ -65,7 +65,7 @@ def main():
         filtered_df = filtered_df[filtered_df['class'].isin(selected_classes)]
 
     # --- Main content area with a three-column layout ---
-    col1, col2, col3 = st.columns([1, 2, 1])
+    col1 = st.columns([1,])
 
     # --- Left Panel (User Interaction & Table Display) ---
     with col1:
@@ -87,26 +87,26 @@ def main():
         )
         
         # Create a button to trigger the plot
-        plot_button = st.button("Plot Selected Sources")
+        # plot_button = st.button("Plot Selected Sources")
 
-    # --- Middle Panel (Plotting) ---
-    with col2:
-        st.header("AITOFF Projection")
-        if plot_button:
-            if not selected_rows['selection']:
-                st.info("Please select at least one source from the table to plot.")
-            else:
-                selected_indices = selected_rows['selection']
-                selected_df = filtered_df.loc[selected_indices]
-                fig = aitoff_projection_plot(selected_df)
-                st.pyplot(fig)
-        else:
-            st.info("Select sources from the left panel and click 'Plot Selected Sources' to view the projection.")
+    # # --- Middle Panel (Plotting) ---
+    # with col2:
+    #     st.header("AITOFF Projection")
+    #     if plot_button:
+    #         if not selected_rows['selection']:
+    #             st.info("Please select at least one source from the table to plot.")
+    #         else:
+    #             selected_indices = selected_rows['selection']
+    #             selected_df = filtered_df.loc[selected_indices]
+    #             fig = aitoff_projection_plot(selected_df)
+    #             st.pyplot(fig)
+    #     else:
+    #         st.info("Select sources from the left panel and click 'Plot Selected Sources' to view the projection.")
             
-    # --- Right Panel (Placeholder) ---
-    with col3:
-        st.header("SHAP Analysis")
-        st.write("Local Explanation of Classification")
+    # # --- Right Panel (Placeholder) ---
+    # with col3:
+    #     st.header("SHAP Analysis")
+    #     st.write("Local Explanation of Classification")
 
 if __name__ == "__main__":
     main()
