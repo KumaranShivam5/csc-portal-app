@@ -65,12 +65,12 @@ def main():
         filtered_df = filtered_df[filtered_df['class'].isin(selected_classes)]
 
     # --- Main content area with a three-column layout ---
-    col1 = st.columns([1,])
+    col1 , col2 = st.columns([1,2])
 
     # --- Left Panel (User Interaction & Table Display) ---
     with col1:
         st.header("Source Data Table")
-        st.write("Select rows from the table below for plotting.")
+        # st.write("Select rows from the table below for plotting.")
         
         # Display the filtered dataframe and allow row selection
         selected_rows = st.dataframe(
